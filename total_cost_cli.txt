@@ -1,0 +1,14 @@
+configuring  IAM using AWS CLI for total cost of AWS.
+
+
+import boto3
+ec2 = boto3.resource('ec2')
+for instance in ec2.instances.all():
+    print (instance.id , instance.state)
+
+
+for region in `aws ec2 describe-regions --output text | cut -f3`
+do
+     echo -e "\nListing Instances in region:'$region'..."
+     aws ec2 describe-instances-id --region $region
+done
